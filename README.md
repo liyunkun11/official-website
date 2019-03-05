@@ -2,20 +2,22 @@
 
 > 响应式企业官方网站模板，使用vue全家桶开发
 
-## Build Setup
+## 技术要点
 
 ``` bash
-# install dependencies
-npm install
+# bootstarp——整体框架，主要用到了栅格系统和一些组件
 
-# serve with hot reload at localhost:8080
-npm run dev
+# swiper——轮播插件
 
-# build for production with minification
-npm run build
+# wow.js+animate.css——网站的整体动画插件
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# axios——ajax请求
+
+# vue-router——路由
+
+# vuex——状态管理（项目没有用到）
+
+# session storage——本地存储
+
+# 对可复用的组件进行了封装，对api接口进行了封装
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
