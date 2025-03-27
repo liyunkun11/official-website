@@ -1,0 +1,38 @@
+name: auto-deploy
+
+on: 
+    push: 
+        branches: 
+            - master
+
+jobs:
+    first_job:
+        name: build-and-deploy
+        runs-on: ubuntu-latest
+        steps:
+            # 拉取代码
+            - name: Checkout
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            # 安装nodejs
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 8
+
+            # 安装依赖
+            - name: Install
+              run: npm install
+            
+            # 运行构建脚本
+            - name: Build
+              run: npm run build
+
+            # 部署到 GitHub Pages
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: ./dist
+                  branch: gh-pages
